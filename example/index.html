@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
+  body {
+    font-family: monospace;
+  }
+  .spacer {
+    min-height: 80vh;
+  }
+  .multipara, .multipara-2 {
+    position: relative;
+    min-height: 60vh;
+    background: #EEE;
+  }
+  .multipara .layer, .multipara-2 .layer-2 {
+    font-size: 50vh;
+    font-family: 'Tilt Prism', cursive;
+    position: absolute;
+  }
+</style>
+</head>
+<body>
+
+<h1>🡇 Scroll Down 🡇</h1>
+
+<div class="spacer"></div>
+
+<h3>Example 1</h3>
+<textarea rows="11" style="width:100%;resize:none" disabled>
+<div class="multipara">
+  <div class="layer" data-multipara-y="0" data-multipara-x="-0.2">A</div>
+  <div class="layer" data-multipara-y="0.3">&nbsp;&nbsp;B</div>
+</div>
+
+<script>
+new MultiPara({
+  container: ".multipara",
+  layer: ".layer"
+});
+</script></textarea>
+
+<div class="multipara">
+  <div class="layer" data-multipara-y="0" data-multipara-x="-0.2">A</div>
+  <div class="layer" data-multipara-y="0.3">&nbsp;&nbsp;B</div>
+</div>
+
+<div class="spacer"></div>
+
+<h3>Example 2 (Stop animation when back to origin)</h3>
+<textarea rows="12" style="width:100%;resize:none" disabled>
+<div class="multipara-2">
+  <div class="layer-2" data-multipara-y="1">C</div>
+  <div class="layer-2" data-multipara-y="-0.2" data-multipara-x="0.3">&nbsp;&nbsp;D</div>
+</div>
+
+<script>
+new MultiPara({
+  container: ".multipara-2",
+  layer: ".layer-2",
+  stoppable: true
+});
+</script></textarea>
+
+<div class="multipara-2">
+  <div class="layer-2" data-multipara-y="1">C</div>
+  <div class="layer-2" data-multipara-y="-0.2" data-multipara-x="0.3">&nbsp;&nbsp;D</div>
+</div>
+
+<div class="spacer"></div>
+
+<script src="../multipara.min.js"></script>
+<script>
+  new MultiPara({
+    container: ".multipara",
+    layer: ".layer"
+  });
+  
+  new MultiPara({
+    container: ".multipara-2",
+    layer: ".layer-2",
+    stoppable: true
+  });
+</script>
+
+</body>
+</html>

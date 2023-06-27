@@ -4,17 +4,20 @@
  * Copyright (c) 2023 @louisho5
  * Under the MIT license.
  *
- * @version 0.0.1
+ * @version 0.1.0
  */
 
 class MultiPara {
   constructor(options = {}) {
     this.options = options;
     if (this.options.container == undefined) {
-        this.options.container = '.multipara';
+      this.options.container = '.multipara';
     }
     if (this.options.layer == undefined) {
       this.options.layer = '.layer';
+    }
+    if (this.options.stoppable == undefined) {
+      this.options.stoppable = false;
     }
     this.init = this.init.bind(this);
     document.addEventListener("DOMContentLoaded", this.init);
@@ -23,6 +26,7 @@ class MultiPara {
   init() {
     var paraContainer = this.options.container;
     var paraLayer = this.options.layer;
+    var paraStoppable = this.options.stoppable;
     window.addEventListener("scroll", function(){
         var multipara = document.querySelectorAll(paraContainer);
         multipara.forEach(function(multiparaContainer){
@@ -31,8 +35,38 @@ class MultiPara {
           multiparaLayers.forEach(function(multiparaLayer) {
             var multiparaX = multiparaLayer.getAttribute('data-multipara-x') || 0;
             var multiparaY = multiparaLayer.getAttribute('data-multipara-y') || 0;
-            var multiparaXPos = multiparaTop * multiparaX;
-            var multiparaYPos = multiparaTop * multiparaY;
+            var paraOriginX, paraOriginY;
+            var multiparaXPos;
+            var multiparaYPos;
+            if(multiparaX > 0){
+              paraOriginX = true;
+            } else {
+              paraOriginX = false;
+            }
+            if(multiparaY > 0){
+              paraOriginY = true;
+            } else {
+              paraOriginY = false;
+            }
+            if(!paraStoppable){
+              multiparaXPos = multiparaTop * multiparaX;
+              multiparaYPos = multiparaTop * multiparaY;
+            } else {
+              multiparaXPos = multiparaTop * multiparaX;
+              if(paraOriginX && multiparaXPos < 0){
+                multiparaXPos = 0;
+              }
+              if(!paraOriginX && multiparaXPos > 0){
+                multiparaXPos = 0;
+              }
+              multiparaYPos = multiparaTop * multiparaY;
+              if(paraOriginY && multiparaYPos < 0){
+                multiparaYPos = 0;
+              }
+              if(!paraOriginY && multiparaYPos > 0){
+                multiparaYPos = 0;
+              }
+            }
             multiparaLayer.style.transform = `translate(${multiparaXPos}px, ${multiparaYPos}px)`;
           });
         });
