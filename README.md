@@ -2,6 +2,10 @@
 
 Version 0.1.0
 
+# Demo
+
+[Example in Codepen]([https://www.google.com](https://codepen.io/louisho5/pen/BaGpbrm))
+
 ## Summary
 
 Apply multiple layered parallax effects in single line of code. 
