@@ -4,7 +4,7 @@ Version 0.1.0
 
 # Demo
 
-[Example in Codepen]([https://www.google.com](https://codepen.io/louisho5/pen/BaGpbrm))
+[Example in Codepen](https://codepen.io/louisho5/pen/BaGpbrm)
 
 ## Summary
 
