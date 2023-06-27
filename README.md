@@ -65,7 +65,7 @@ There are 3 optional parameters in this plugin:
 
 ```js script
 
-new cookieBar({
+new MultiPara({
     container: ".multipara", // The outside container
     layer: ".layer", // The inside layers
     stoppable: false // Default false, set true is you want to stop the animation at the end
