@@ -38,6 +38,14 @@ or
 	
 ```
 
+CDN:
+
+```js script
+
+<script src="https://cdn.jsdelivr.net/gh/louisho5/multipara@latest/multipara.min.js"></script>
+	
+```
+
 ## Requirements/Browsers
 
 Works in Edge 12+, Chrome 29+, Safari 9+, Firefox 28+.
