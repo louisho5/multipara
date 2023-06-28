@@ -4,7 +4,7 @@
  * Copyright (c) 2023 @louisho5
  * Under the MIT license.
  *
- * @version 0.1.0
+ * @version 0.2.0
  */
 
 class MultiPara {
@@ -73,5 +73,9 @@ class MultiPara {
     });
 
     window.dispatchEvent(new Event('scroll'));
+    
+    document.addEventListener("resize", function(){
+      window.dispatchEvent(new Event('scroll'));
+    });
   }
 }
