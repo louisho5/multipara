@@ -1,6 +1,6 @@
 # MultiPara.js (Deprecated)
 
-Version 0.2.0 (Deprecated)
+Version 0.2.0 (Deprecated) <br>
 Please learn more on [MotionScroll](https://github.com/louisho5/MotionScroll)
 
 # Demo
