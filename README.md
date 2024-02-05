@@ -1,8 +1,8 @@
 # MultiPara.js
 
-Version 0.2.0
+<strong>If you want more advanced scroll animation, please learn more on [MotionScroll](https://github.com/louisho5/MotionScroll) <strong>
 
-If you want more advanced animation, please learn more on [MotionScroll](https://github.com/louisho5/MotionScroll)
+Version 0.2.0
 
 # Demo
 
